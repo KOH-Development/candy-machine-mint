@@ -233,7 +233,6 @@ const Home = (props: HomeProps) => {
                         ) : (
                             <Countdown
                                 date={startDate}
-                                now={Date.now}
                                 onMount={({ completed }) => completed && setIsActive(true)}
                                 onComplete={() => setIsActive(true)}
                                 renderer={renderCounter}
