@@ -181,6 +181,7 @@ const Home = (props: HomeProps) => {
             if (wallet) {
                 const balance = await props.connection.getBalance(wallet.publicKey);
                 setBalance(balance / LAMPORTS_PER_SOL);
+                // eslint-disable-next-line
                 const data = await fetch(`${api_url}/whitelisted/member/${(wallet as anchor.Wallet).publicKey.toString()}`)
                 if (data.status.toString() !== "404") {
                     SetWhitelisted(true)
