@@ -67,7 +67,7 @@ const ImgContainer = styled.div`
     @media (max-width: 1100px) {
         display: none;
     }
-`; 
+`;
 
 const ImgWrap = styled.img`
     height: 420px;
@@ -150,16 +150,16 @@ const Home = (props: HomeProps) => {
 
     const onMint = async () => {
         try {
-            let res = await fetch(`${api_url}/whitelisted/member/${(wallet as anchor.Wallet).publicKey.toString()}`, { method: "GET" })
-            const res_json = await res.json()
-            const res_num = await JSON.parse(JSON.stringify(res_json)).reserve //The number  of reserves the user has left
-            if (!isWhitelisted) {
-                throw new Error("You are not whitelisted");
-            }
-            if (res_num - 1 < 0) {
-                console.log("confirmed")
-                throw new Error("Not enough reserves");
-            }
+            //let res = await fetch(`${api_url}/whitelisted/member/${(wallet as anchor.Wallet).publicKey.toString()}`, { method: "GET" })
+            //const res_json = await res.json()
+            //const res_num = await JSON.parse(JSON.stringify(res_json)).reserve //The number  of reserves the user has left
+            //if (!isWhitelisted) {
+            //    throw new Error("You are not whitelisted");
+            //}
+            //if (res_num - 1 < 0) {
+            //    console.log("confirmed")
+            //    throw new Error("Not enough reserves");
+            //}
             setIsMinting(true);
             if (wallet && candyMachine?.program) {
                 const mintTxId = await mintOneToken(
@@ -183,15 +183,15 @@ const Home = (props: HomeProps) => {
                         message: "Congratulations! Mint succeeded!",
                         severity: "success",
                     });
-                    const to_send = await JSON.stringify({ "reserve": res_num - 1 })
-                    await fetch(`${api_url}/whitelisted/update/${(wallet as anchor.Wallet).publicKey.toString()}/${process.env.REACT_APP_SECRET_KEY}`, {
-                        method: "PUT",
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: to_send
-                    })
-                    console.log("Updated Reserves for user")
+                    //const to_send = await JSON.stringify({ "reserve": res_num - 1 })
+                    //await fetch(`${api_url}/whitelisted/update/${(wallet as anchor.Wallet).publicKey.toString()}/${process.env.REACT_APP_SECRET_KEY}`, {
+                    //    method: "PUT",
+                    //    headers: {
+                    //        'Content-Type': 'application/json',
+                    //    },
+                    //    body: to_send
+                    //})
+                    //console.log("Updated Reserves for user")
 
                 } else {
                     setAlertState({
@@ -245,13 +245,13 @@ const Home = (props: HomeProps) => {
                 const balance = await props.connection.getBalance(wallet.publicKey);
                 setBalance(balance / LAMPORTS_PER_SOL);
                 // eslint-disable-next-line
-                const data = await fetch(`${api_url}/whitelisted/member/${(wallet as anchor.Wallet).publicKey.toString()}`)
-                if (data.status.toString() !== "404") {
-                    SetWhitelisted(true)
-                }
-                else {
-                    console.log("not found")
-                }
+                //const data = await fetch(`${api_url}/whitelisted/member/${(wallet as anchor.Wallet).publicKey.toString()}`)
+                //if (data.status.toString() !== "404") {
+                //    SetWhitelisted(true)
+                //}
+                //else {
+                //    console.log("not found")
+                //}
             }
         })();
     }, [wallet, props.connection]);
@@ -269,19 +269,19 @@ const Home = (props: HomeProps) => {
                 0euvre AI
             </div>
 
-            <div style={{ display:"flex" }}>
+            <div style={{ display: "flex" }}>
 
                 <ImgContainer>
-                    <ImgWrap src="/preview_assets/1.webp" alt="Preview 1" style={{ animationDelay: "18s" }}/>
-                    <ImgWrap src="/preview_assets/2.webp" alt="Preview 1" style={{ animationDelay: "15s" }}/>
-                    <ImgWrap src="/preview_assets/3.webp" alt="Preview 1" style={{ animationDelay: "12s" }}/>
-                    <ImgWrap src="/preview_assets/4.webp" alt="Preview 1" style={{ animationDelay: "9s" }}/>
-                    <ImgWrap src="/preview_assets/5.webp" alt="Preview 1" style={{ animationDelay: "6s" }}/>
-                    <ImgWrap src="/preview_assets/6.webp" alt="Preview 1" style={{ animationDelay: "3s" }}/>
-                    <ImgWrap src="/preview_assets/7.webp" alt="Preview 1" style={{ animationDelay: "0s" }}/>
+                    <ImgWrap src="/preview_assets/1.webp" alt="Preview 1" style={{ animationDelay: "18s" }} />
+                    <ImgWrap src="/preview_assets/2.webp" alt="Preview 1" style={{ animationDelay: "15s" }} />
+                    <ImgWrap src="/preview_assets/3.webp" alt="Preview 1" style={{ animationDelay: "12s" }} />
+                    <ImgWrap src="/preview_assets/4.webp" alt="Preview 1" style={{ animationDelay: "9s" }} />
+                    <ImgWrap src="/preview_assets/5.webp" alt="Preview 1" style={{ animationDelay: "6s" }} />
+                    <ImgWrap src="/preview_assets/6.webp" alt="Preview 1" style={{ animationDelay: "3s" }} />
+                    <ImgWrap src="/preview_assets/7.webp" alt="Preview 1" style={{ animationDelay: "0s" }} />
                 </ImgContainer>
 
-                <div style={{ marginTop:"20vh", fontFamily: "Lato", fontSize: "18px" }}>
+                <div style={{ marginTop: "20vh", fontFamily: "Lato", fontSize: "18px", backgroundColor: "rgba(52, 52, 52, 0.9)", maxHeight: "200px", padding:"25px" }}>
                     {wallet && (
                         <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
                     )}
@@ -327,19 +327,19 @@ const Home = (props: HomeProps) => {
                 </div>
 
                 <ImgContainer style={{ marginTop: "300px", left: "30px" }}>
-                    <ImgWrap src="/preview_assets/8.webp" alt="Preview 1" style={{ animationDelay: "18s" }}/>
-                    <ImgWrap src="/preview_assets/9.webp" alt="Preview 1" style={{ animationDelay: "15s" }}/>
-                    <ImgWrap src="/preview_assets/10.webp" alt="Preview 1" style={{ animationDelay: "12s" }}/>
-                    <ImgWrap src="/preview_assets/11.webp" alt="Preview 1" style={{ animationDelay: "9s" }}/>
-                    <ImgWrap src="/preview_assets/12.webp" alt="Preview 1" style={{ animationDelay: "6s" }}/>
-                    <ImgWrap src="/preview_assets/13.webp" alt="Preview 1" style={{ animationDelay: "3s" }}/>
-                    <ImgWrap src="/preview_assets/14.webp" alt="Preview 1" style={{ animationDelay: "0s" }}/>
+                    <ImgWrap src="/preview_assets/8.webp" alt="Preview 1" style={{ animationDelay: "18s" }} />
+                    <ImgWrap src="/preview_assets/9.webp" alt="Preview 1" style={{ animationDelay: "15s" }} />
+                    <ImgWrap src="/preview_assets/10.webp" alt="Preview 1" style={{ animationDelay: "12s" }} />
+                    <ImgWrap src="/preview_assets/11.webp" alt="Preview 1" style={{ animationDelay: "9s" }} />
+                    <ImgWrap src="/preview_assets/12.webp" alt="Preview 1" style={{ animationDelay: "6s" }} />
+                    <ImgWrap src="/preview_assets/13.webp" alt="Preview 1" style={{ animationDelay: "3s" }} />
+                    <ImgWrap src="/preview_assets/14.webp" alt="Preview 1" style={{ animationDelay: "0s" }} />
                 </ImgContainer>
 
             </div>
 
             <a href="https://discord.com/invite/qMbBVNASTS">
-                <DiscordLink src="/discord-brands.svg" alt="Discord Link"/>
+                <DiscordLink src="/discord-brands.svg" alt="Discord Link" />
             </a>
 
             <Snackbar
