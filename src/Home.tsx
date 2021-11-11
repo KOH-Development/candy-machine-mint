@@ -272,13 +272,13 @@ const Home = (props: HomeProps) => {
             <div style={{ display:"flex" }}>
 
                 <ImgContainer>
-                    <ImgWrap src="/preview_assets/1.png" alt="Preview 1" style={{ animationDelay: "18s" }}/>
-                    <ImgWrap src="/preview_assets/2.png" alt="Preview 1" style={{ animationDelay: "15s" }}/>
-                    <ImgWrap src="/preview_assets/3.png" alt="Preview 1" style={{ animationDelay: "12s" }}/>
-                    <ImgWrap src="/preview_assets/4.png" alt="Preview 1" style={{ animationDelay: "9s" }}/>
-                    <ImgWrap src="/preview_assets/5.png" alt="Preview 1" style={{ animationDelay: "6s" }}/>
-                    <ImgWrap src="/preview_assets/6.png" alt="Preview 1" style={{ animationDelay: "3s" }}/>
-                    <ImgWrap src="/preview_assets/7.png" alt="Preview 1" style={{ animationDelay: "0s" }}/>
+                    <ImgWrap src="/preview_assets/1.webp" alt="Preview 1" style={{ animationDelay: "18s" }}/>
+                    <ImgWrap src="/preview_assets/2.webp" alt="Preview 1" style={{ animationDelay: "15s" }}/>
+                    <ImgWrap src="/preview_assets/3.webp" alt="Preview 1" style={{ animationDelay: "12s" }}/>
+                    <ImgWrap src="/preview_assets/4.webp" alt="Preview 1" style={{ animationDelay: "9s" }}/>
+                    <ImgWrap src="/preview_assets/5.webp" alt="Preview 1" style={{ animationDelay: "6s" }}/>
+                    <ImgWrap src="/preview_assets/6.webp" alt="Preview 1" style={{ animationDelay: "3s" }}/>
+                    <ImgWrap src="/preview_assets/7.webp" alt="Preview 1" style={{ animationDelay: "0s" }}/>
                 </ImgContainer>
 
                 <div style={{ marginTop:"20vh", fontFamily: "Lato", fontSize: "18px" }}>
@@ -327,13 +327,13 @@ const Home = (props: HomeProps) => {
                 </div>
 
                 <ImgContainer style={{ marginTop: "300px", left: "30px" }}>
-                    <ImgWrap src="/preview_assets/8.png" alt="Preview 1" style={{ animationDelay: "18s" }}/>
-                    <ImgWrap src="/preview_assets/9.png" alt="Preview 1" style={{ animationDelay: "15s" }}/>
-                    <ImgWrap src="/preview_assets/10.png" alt="Preview 1" style={{ animationDelay: "12s" }}/>
-                    <ImgWrap src="/preview_assets/11.png" alt="Preview 1" style={{ animationDelay: "9s" }}/>
-                    <ImgWrap src="/preview_assets/12.png" alt="Preview 1" style={{ animationDelay: "6s" }}/>
-                    <ImgWrap src="/preview_assets/13.png" alt="Preview 1" style={{ animationDelay: "3s" }}/>
-                    <ImgWrap src="/preview_assets/14.png" alt="Preview 1" style={{ animationDelay: "0s" }}/>
+                    <ImgWrap src="/preview_assets/8.webp" alt="Preview 1" style={{ animationDelay: "18s" }}/>
+                    <ImgWrap src="/preview_assets/9.webp" alt="Preview 1" style={{ animationDelay: "15s" }}/>
+                    <ImgWrap src="/preview_assets/10.webp" alt="Preview 1" style={{ animationDelay: "12s" }}/>
+                    <ImgWrap src="/preview_assets/11.webp" alt="Preview 1" style={{ animationDelay: "9s" }}/>
+                    <ImgWrap src="/preview_assets/12.webp" alt="Preview 1" style={{ animationDelay: "6s" }}/>
+                    <ImgWrap src="/preview_assets/13.webp" alt="Preview 1" style={{ animationDelay: "3s" }}/>
+                    <ImgWrap src="/preview_assets/14.webp" alt="Preview 1" style={{ animationDelay: "0s" }}/>
                 </ImgContainer>
 
             </div>
