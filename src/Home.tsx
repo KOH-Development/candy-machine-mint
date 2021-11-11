@@ -247,7 +247,7 @@ const Home = (props: HomeProps) => {
                 // eslint-disable-next-line
                 //const data = await fetch(`${api_url}/whitelisted/member/${(wallet as anchor.Wallet).publicKey.toString()}`)
                 //if (data.status.toString() !== "404") {
-                //    SetWhitelisted(true)
+                    SetWhitelisted(true)
                 //}
                 //else {
                 //    console.log("not found")
