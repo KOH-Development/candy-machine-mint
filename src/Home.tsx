@@ -25,7 +25,9 @@ const CounterText = styled.span``; // add your styles here
 
 const MintContainer = styled.div``; // add your styles here
 
-const MintButton = styled(Button)``; // add your styles here
+const MintButton = styled(Button)`
+    margin: 25px;
+`; // add your styles here
 
 const float = keyframes`
     0% {
@@ -247,7 +249,7 @@ const Home = (props: HomeProps) => {
                 // eslint-disable-next-line
                 //const data = await fetch(`${api_url}/whitelisted/member/${(wallet as anchor.Wallet).publicKey.toString()}`)
                 //if (data.status.toString() !== "404") {
-                    SetWhitelisted(true)
+                SetWhitelisted(true)
                 //}
                 //else {
                 //    console.log("not found")
@@ -281,7 +283,7 @@ const Home = (props: HomeProps) => {
                     <ImgWrap src="/preview_assets/7.webp" alt="Preview 1" style={{ animationDelay: "0s" }} />
                 </ImgContainer>
 
-                <div style={{ marginTop: "20vh", fontFamily: "Lato", fontSize: "18px", backgroundColor: "rgba(52, 52, 52, 0.9)", maxHeight: "200px", padding:"25px" }}>
+                <div style={{ marginTop: "20vh", fontFamily: "Lato", fontSize: "18px", backgroundColor: "rgba(52, 52, 52, 0.9)", maxHeight: "250px", padding: "25px" }}>
                     {wallet && (
                         <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
                     )}
@@ -294,7 +296,8 @@ const Home = (props: HomeProps) => {
                     {wallet && <p>Redeemed: {itemsRedeemed}</p>}
                     */}
 
-                    {wallet && <p>Remaining: {itemsRemaining} / {itemsAvailable}</p>}
+                    {wallet && <p>Minted: {100 + itemsRedeemed} out of 999</p>}
+                    {wallet && <p>Remaining: {999 - (itemsRedeemed + 100)}</p>}
 
                     <MintContainer>
                         {!wallet ? (
