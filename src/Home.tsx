@@ -296,8 +296,9 @@ const Home = (props: HomeProps) => {
                     {wallet && <p>Redeemed: {itemsRedeemed}</p>}
                     */}
 
-                    {wallet && <p>Minted: {100 + itemsRedeemed} out of 999</p>}
-                    {wallet && <p>Remaining: {999 - (itemsRedeemed + 100)}</p>}
+                    {<p>Mint Price: 0.5 SOL</p>}
+                    {wallet && <p>Minted: {166 + itemsRedeemed} out of 499</p>}
+                    {wallet && <p>Remaining: {499 - (itemsRedeemed + 166)}</p>}
 
                     <MintContainer>
                         {!wallet ? (
